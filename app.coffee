@@ -3,6 +3,16 @@ rupture      = require 'rupture'
 autoprefixer = require 'autoprefixer-stylus'
 js_pipeline  = require 'js-pipeline'
 css_pipeline = require 'css-pipeline'
+browserify = require 'roots-browserify'
+
+module.exports =
+  extensions: [
+    browserify(files: "assets/js/main.coffee", out: 'js/build.js')
+  ]
+
+module.exports =
+  jade:
+    pretty: true
 
 module.exports =
   ignores: ['readme.md', '**/layout.*', '**/_*', '.gitignore', 'ship.*conf']
